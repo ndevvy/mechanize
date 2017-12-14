@@ -186,6 +186,8 @@ class Mechanize::Page < Mechanize::File
     URI href
   rescue URI::InvalidURIError
     URI Mechanize::Util.uri_escape href
+  rescue URI::InvalidURIError
+    nil
   end
 
   # Get the content type
@@ -645,4 +647,3 @@ require 'mechanize/page/link'
 require 'mechanize/page/base'
 require 'mechanize/page/frame'
 require 'mechanize/page/meta_refresh'
-
